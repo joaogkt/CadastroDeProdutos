@@ -33,11 +33,11 @@ def funcao_principal():
     print(f'Descrição: {linha2}')
     print(f'Preço: R${linha3}')
 
-    if uteis.arqExiste(a):
-        print('Arquivo encontrado com sucesso!')
-    else:
-        uteis.CriarArquvivo(a)
-    uteis.escrever(a, linha1, linha2, linha3, c)
+    #if uteis.arqExiste(a):
+    #    print('Arquivo encontrado com sucesso!')
+    #else:
+    #    uteis.CriarArquvivo(a)
+    #uteis.escrever(a, linha1, linha2, linha3, c)
 
     cursor = banco.cursor()
     comando_sql = f"INSERT INTO produtos (codigo,descricao,preco,categoria) VALUES (%s, %s, %s, %s)"
@@ -46,7 +46,7 @@ def funcao_principal():
     banco.commit()
 
 
-a = 'cadastro.txt'
+#a = 'cadastro.txt'
 app = QtWidgets.QApplication([])
 formulario = uic.loadUi("CadastroProduto.ui")
 formulario.pushButton.clicked.connect(funcao_principal)
